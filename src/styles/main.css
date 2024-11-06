@@ -19,5 +19,9 @@ html, body {
 }
 
 body {
+  background-color: black;
   font-family: var(--authenticFontFamily);
+  transition: background-color 2.5s ease;
+}
+
 }
