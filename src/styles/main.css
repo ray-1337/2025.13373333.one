@@ -1,6 +1,12 @@
 :root {
   --authenticFontFamily: "Satoshi", sans-serif;
 
+  /* dark color */
+  --authenticDarkColor001: #1B1B1B;
+  --authenticDarkColor002: #262626;
+  --authenticDarkColor003: #454545;
+  --authenticDarkColor004: #121112;
+
 }
 
 body {
