@@ -25,6 +25,14 @@ body {
 }
 
 
+a {
+  color: var(--authenticDarkColor001);
+}
+
+a[data-reduce-opacity-on-hover]:hover {
+  opacity: 0.75;
+}
+
 ::selection {
   color: var(--authenticLightColor001);
   background-color: var(--authenticDarkColor003);
