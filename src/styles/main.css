@@ -10,6 +10,8 @@
   /* white color */
   --authenticLightColor001: #D1D0D0;
 
+  /* transitions easing */
+  --authenticTransitionExpoOut: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
