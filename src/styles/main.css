@@ -24,4 +24,16 @@ body {
   transition: background-color 2.5s ease;
 }
 
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--authenticDarkColor003);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--authenticLightColor001);
 }
