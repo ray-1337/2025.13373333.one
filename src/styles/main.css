@@ -25,6 +25,11 @@ body {
 }
 
 
+::selection {
+  color: var(--authenticLightColor001);
+  background-color: var(--authenticDarkColor003);
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
