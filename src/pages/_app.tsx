@@ -1,8 +1,18 @@
+import { Fragment } from "react";
+import Head from "next/head";
 import type { AppProps } from "next/app";
 
 import "normalize.css";
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Fragment>
+      <Head>
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701&display=swap" rel="preload stylesheet" as={"style"} />
+      </Head>
+
+      <Component {...pageProps} />
+    </Fragment>
+  );
 };
