@@ -24,6 +24,11 @@ body {
   transition: background-color 2.5s ease;
 }
 
+img {
+  width: inherit;
+  height: inherit;
+  object-fit: inherit;
+}
 
 a {
   color: var(--authenticDarkColor001);
