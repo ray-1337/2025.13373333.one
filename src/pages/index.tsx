@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 // style
 import style from "@/styles/components/Primary.module.css";
 
+const Interface = dynamic(() => import("@/components/Interface"), { ssr: false });
 const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
 
 export default function MainPage() {
