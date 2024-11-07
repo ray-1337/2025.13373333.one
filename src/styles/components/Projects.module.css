@@ -122,8 +122,8 @@
 }
 
 .projects-item-image-title h1 {
-  margin: 0.25rem 0 0;
-  line-height: 1
+  margin: 0;
+  line-height: 1.5
 }
 
 .projects-item-visit-root {
@@ -319,6 +319,7 @@
 
   .projects-item-image-title {
     font-size: 0.5em;
+    max-width: 90%;
   }
 
   .projects-item-visit-super {
