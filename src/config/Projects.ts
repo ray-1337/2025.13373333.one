@@ -128,7 +128,8 @@ const Entertainment: ProjectsVariableProp = [
     description: "Creating a YouTube programming content (mainly into Discord bot) with no fillers.",
     yearRelease: 2020,
     projectState: "Discontinued",
-    ytVidId: "PLHSePCXwuwyoFuhV9e23zu1eEjPSVQmmZ"
+    ytVidId: "PLHSePCXwuwyoFuhV9e23zu1eEjPSVQmmZ",
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/blob-project/snapshots/001.webm"
   }
 ];
 
