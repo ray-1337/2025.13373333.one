@@ -1,0 +1,10 @@
+.main-root {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh
+}
+
+.main-insider-root {
+  max-width: 512px;
+  height: 100vh;
+}
