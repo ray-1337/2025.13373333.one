@@ -7,6 +7,7 @@ import "normalize.css";
 
 import "@mantine/core/styles.css";
 
+import "@/styles/main.css";
 
 const mantineTheme = createTheme({
   fontFamily: "var(--authenticFontFamily)"
