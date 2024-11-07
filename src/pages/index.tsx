@@ -14,6 +14,11 @@ const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
 export default function MainPage() {
   const [menuState, setMenuState] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.backgroundColor = "var(--authenticDarkColor001)";
+    };
+  }, []);
 
   return (
     <section className={style["main-root"]}>
