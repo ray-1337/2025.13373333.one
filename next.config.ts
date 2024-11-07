@@ -7,6 +7,28 @@ const nextConfig: NextConfig = {
 
   poweredByHeader: false,
 
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: `
+              default-src 'self';
+              script-src 'self' ${process.env.NODE_ENV === "development" ? "'unsafe-eval' 'unsafe-inline'" : ""} https://static.cloudflareinsights.com/beacon.min.js;
+              style-src 'self' 'unsafe-inline' https://api.fontshare.com/;
+              img-src 'self' https://i.ytimg.com/vi/ https://cdn.simpleicons.org/;
+              font-src 'self' https://cdn.fontshare.com/;
+              frame-src https://www.youtube-nocookie.com;
+              connect-src 'self' https://cloudflareinsights.com/;
+              upgrade-insecure-requests;
+            `.replace(/\r|\n/g, '')
+          },
+        ],
+      },
+    ]
+  }
 };
 
 export default nextConfig;
