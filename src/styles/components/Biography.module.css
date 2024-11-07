@@ -1,0 +1,133 @@
+.biography-root {
+  height: 100%;
+  display: flex;
+  padding: 3.75rem 5rem 7.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.biography-pfp img {
+  border-radius: 50%;
+}
+
+.biography-text {
+  margin-top: 2rem;
+  line-height: 1.75;
+  font-size: 1.1em;
+}
+
+.biography-menu-root {
+  margin-top: 3.75rem;
+  max-width: 50%;
+}
+
+.biography-menu-item {
+  cursor: pointer;
+  user-select: none;
+  width: max-content;
+  line-height: 1.5;
+  position: relative;
+  transition: opacity 125ms linear;
+}
+
+.biography-menu-item:after {
+  content: "";
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 0%;
+  transition: width 250ms var(--authenticTransitionExpoOut);
+  pointer-events: none;
+  margin-left: 1rem;
+}
+
+.biography-menu-item:hover {
+  opacity: 0.8;
+}
+
+.biography-menu-item:hover:after {
+  width: 100%;
+}
+
+.biography-socials-root {
+  display: grid;
+  gap: 24px;
+  /* goofy ahh */
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: minmax(24px, auto);
+}
+
+.biography-socials-item {
+  grid-row: 1;
+  height: 24px;
+  width: max-content;
+  transition: opacity 125ms linear;
+}
+
+.biography-socials-item:hover {
+  opacity: 0.5;
+}
+
+.biography-socials-item img {
+  height: 24px;
+}
+
+/* transition/introduction state */
+.biography-root[data-rendered] .biography-pfp,
+.biography-root[data-rendered] .biography-text,
+.biography-root[data-rendered] .biography-menu-root,
+.biography-root[data-rendered] .biography-lower {
+  transition: transform 750ms var(--authenticTransitionExpoOut), opacity 125ms linear;
+  transform: translateY(40px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.biography-root[data-rendered="true"] .biography-pfp,
+.biography-root[data-rendered="true"] .biography-text,
+.biography-root[data-rendered="true"] .biography-menu-root,
+.biography-root[data-rendered="true"] .biography-lower {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.biography-root[data-rendered="true"] .biography-pfp {
+  transition-delay: 75ms
+}
+
+.biography-root[data-rendered="true"] .biography-text {
+  transition-delay: 125ms
+}
+
+.biography-root[data-rendered="true"] .biography-menu-root {
+  transition-delay: 200ms
+}
+
+.biography-root[data-rendered="true"] .biography-lower {
+  transition-delay: 250ms;
+}
+
+@media only screen and (max-width: 1280px) {
+  .biography-root {
+    padding: 3.75rem 2rem 7.5rem;
+  }
+
+  .biography-text {
+    max-width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .biography-text {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .biography-root {
+    padding: 3.75rem 1.25rem;
+  }
+}
