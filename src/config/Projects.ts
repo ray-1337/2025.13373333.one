@@ -51,7 +51,8 @@ const Applications: ProjectsVariableProp = [
     url: "https://github.com/ray-1337/youtube-discord-embed",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/youtube-discord-embed/banner-1.webp",
     yearRelease: 2023,
-    description: "Transform YouTube embed into a watchable video without having to redirect user's to the website, inspired by FixTweet."
+    description: "Transform YouTube embed into a watchable video without having to redirect user's to the website, inspired by FixTweet.",
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/youtube-discord-embed/snapshots/002.webm"
   },
   {
     name: "Anti-NSFW",
