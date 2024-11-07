@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Select, Checkbox, Flex, Tooltip, Group, Text } from "@mantine/core";
+import { Select, Checkbox, Flex, Tooltip, Group, Text, Loader } from "@mantine/core";
 import { useDebouncedValue, useViewportSize } from "@mantine/hooks";
 
 // utility import
@@ -137,7 +137,15 @@ export default function Projects() {
                         )
                       }
 
-                      <h1>{projectContent.name}</h1>
+                      <Flex gap={"md"} align={"center"}>
+                        <h1>{projectContent.name}</h1>
+
+                        {
+                          (selectedProjectIndex === projectIndex && typeof projectContent?.vidURL === "string" && isVideoSnapshotLoaded !== true) && (
+                            <Loader color={"white"} size={"xs"}/>
+                          )
+                        }
+                      </Flex>
                     </div>
                   </div>
                 </div>
