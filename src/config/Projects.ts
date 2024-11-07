@@ -59,7 +59,13 @@ const Applications: ProjectsVariableProp = [
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anti-nsfw/banner-1.webp",
     yearRelease: 2020,
     description: "A Discord bot that can detect NSFW content through machine learning.",
-    ytVidId: "nmPzkVfQLAM"
+    ytVidId: "nmPzkVfQLAM",
+    credits: [
+      {
+        name: "Jpuf",
+        url: "https://github.com/Jpuf0"
+      }
+    ]
   },
   {
     name: "GMDI (Geometry Dash Indonesia) Discord Bot",
