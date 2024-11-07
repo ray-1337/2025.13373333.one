@@ -21,6 +21,7 @@ html, body {
 body {
   background-color: black;
   font-family: var(--authenticFontFamily);
+  color: var(--authenticLightColor001);
   transition: background-color 2.5s ease;
 }
 
