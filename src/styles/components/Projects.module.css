@@ -53,6 +53,36 @@
   transition: height 375ms var(--authenticTransitionExpoOut);
 }
 
+.projects-item-media-box {
+  width: inherit;
+  height: inherit;
+  object-fit: inherit;
+  position: inherit;
+}
+
+.projects-item-media-box-video {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 500ms var(--authenticTransitionExpoOut), opacity 125ms linear;
+}
+
+.projects-item-media-box-video video {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.projects-item-media-box-video[data-loaded="true"] {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .projects-item-image img {
   transition: filter 250ms ease;
 }

@@ -8,6 +8,7 @@ interface ProjectsProp extends Record<"name" | "imgURL", string>, Partial<Record
   credits?: Array<Record<"name" | "url", string>>;
   projectState?: typeof ProjectStateType[number];
   hidden?: boolean
+  vidURL?: string; // will be used when user's click the project's item 
 };
 
 type ProjectsVariableProp = Array<ProjectsProp>;

@@ -21,6 +21,7 @@ export default function Projects() {
   const { width: windowWidth } = useViewportSize();
 
   const [selectedProjectIndex, selectProjectIndexState] = useState<number | null>(null);
+  const [isVideoSnapshotLoaded, setVideoSnapshotLoadState] = useState<boolean>(false);
   const [delayedProjectSelectionIndex] = useDebouncedValue(selectedProjectIndex, 750);
 
   // max height for aesthetic
@@ -71,6 +72,8 @@ export default function Projects() {
     ) {
       setMaxHeightSelectedProject((prev) => prev + 650);
     };
+
+    setVideoSnapshotLoadState(false);
   }, [selectedProjectIndex]);
 
   return (
@@ -109,7 +112,23 @@ export default function Projects() {
                   setMaxHeightSelectedProject(event.currentTarget?.parentElement?.parentElement?.children?.[1]?.scrollHeight || 0);
                 }}>
                   <div className={style["projects-item-image"]}>
-                    <img alt={`A banner image of a project called ${projectContent.name}`} src={projectContent.imgURL} loading={"lazy"} />
+                    <div className={style["projects-item-media-box"]}>
+                      <img alt={`A banner image of a project called ${projectContent.name}`} src={projectContent.imgURL} loading={"lazy"} />
+
+                      {
+                        ((typeof selectedProjectIndex === "number" ? selectedProjectIndex : delayedProjectSelectionIndex) === projectIndex && typeof projectContent?.vidURL === "string") && (
+                          <div className={style["projects-item-media-box-video"]} data-loaded={isVideoSnapshotLoaded}>
+                            <video onCanPlay={() => setVideoSnapshotLoadState(true)} controls={false} controlsList={"nodownload nofullscreen noremoteplayback"} disablePictureInPicture disableRemotePlayback loop muted autoPlay playsInline preload={"auto"}>
+                              {
+                                projectContent.vidURL.endsWith(".webm") && (
+                                  <source src={projectContent.vidURL} type="video/webm" />
+                                )
+                              }
+                            </video>
+                          </div>
+                        )
+                      }
+                    </div>
 
                     <div className={style["projects-item-image-title"]}>
                       {
