@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import { MantineProvider, createTheme } from "@mantine/core";
 
 import "normalize.css";
@@ -27,6 +28,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <MantineProvider theme={mantineTheme} forceColorScheme={"dark"}>
         <Component {...pageProps} />
       </MantineProvider>
+
+      {/* cloudflare analytics */}
+      {
+        process.env.NODE_ENV !== "development" && (
+          <Script defer={true} strategy={"afterInteractive"} src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon={JSON.stringify({token: "7e8406bcdb5c4f43a725b71411e17820"})}/>
+        )
+      }
     </Fragment>
   );
 };
