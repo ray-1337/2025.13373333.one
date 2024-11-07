@@ -93,7 +93,8 @@ const Applications: ProjectsVariableProp = [
     url: "https://github.com/ray-1337/personal-valorant-broadcasting",
     yearRelease: 2024,
     projectState: "Hiatus",
-    ytVidId: "ivvtDl8u-Ro"
+    ytVidId: "ivvtDl8u-Ro",
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/vlr-waiting-room/snapshots/001.webm"
   }
 ];
 
