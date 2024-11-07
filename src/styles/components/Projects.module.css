@@ -75,7 +75,7 @@
   width: inherit;
   height: inherit;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
 }
 
 .projects-item-media-box-video[data-loaded="true"] {
