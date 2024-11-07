@@ -110,7 +110,7 @@ const Entertainment: ProjectsVariableProp = [
     projectState: "Hiatus",
     description: "It’s a parody of the rap artist CupcakKe, created by mixing her a cappellas (altering pitches, etc.) and transforming another song's lyrics into her most famous unapologetic style.",
     ytVidId: "PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
-    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/cupcakke/snapshots/001.webm"
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/cupcakke/snapshots/002.webm"
   },
   {
     name: "VALORANT Funny Moment Edits",
