@@ -18,6 +18,18 @@ export default function MainPage() {
     if (typeof document !== "undefined") {
       document.body.style.backgroundColor = "var(--authenticDarkColor001)";
     };
+
+    const resetMenuState = () => setMenuState(null);
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("beforeunload", resetMenuState);
+    };
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("beforeunload", resetMenuState);
+      };
+    };
   }, []);
 
   return (
