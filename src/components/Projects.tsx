@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Select, Checkbox, Flex, Tooltip } from "@mantine/core";
+import { Select, Checkbox, Flex, Tooltip, Group, Text } from "@mantine/core";
 import { useDebouncedValue, useViewportSize } from "@mantine/hooks";
 
 // utility import
@@ -82,7 +82,15 @@ export default function Projects() {
 
         {/* show hidden content */}
         <Tooltip position={"bottom"} openDelay={150} withArrow label={"Hidden content refers to outdated, underperforming, or least-favorite projects."}>
-          <Checkbox label={"Show hidden content"} color={"gray"} onChange={(event) => setHiddenState(event.currentTarget.checked)} />
+          <Checkbox.Card bg={"dark.6"} radius="sm" checked={showHidden} onClick={() => setHiddenState((c) => !c)} px={"1rem"} py={"xs"} maw={"max-content"}>
+            <Group wrap="nowrap" align="center">
+              <Checkbox.Indicator bg={"dark.7"} />
+
+              <Text size={"sm"} fw={500}>
+                Show hidden projects
+              </Text>
+            </Group>
+          </Checkbox.Card>
         </Tooltip>
       </Flex>
 
