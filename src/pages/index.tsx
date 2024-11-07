@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
+// context
+import MenuContext from "@/contexts/Menu";
 
 // style
 import style from "@/styles/components/Primary.module.css";
