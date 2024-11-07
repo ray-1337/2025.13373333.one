@@ -6,12 +6,9 @@
   justify-content: space-between;
 }
 
-.biography-pfp {
-  width: 96px;
-}
-
 .biography-pfp img {
   border-radius: 50%;
+  width: 96px;
 }
 
 .biography-text {
