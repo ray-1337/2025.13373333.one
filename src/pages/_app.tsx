@@ -17,6 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <Head>
+        <title>ray personal website (2025 edition)</title>
+
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, shrink-to-fit=no, initial-scale=1.0" />
 
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701&display=swap" rel="preload stylesheet" as={"style"} />
