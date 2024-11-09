@@ -10,6 +10,7 @@ import style from "@/styles/components/Primary.module.css";
 const Biography = dynamic(() => import("@/components/Biography"), { ssr: false });
 const Interface = dynamic(() => import("@/components/Interface"), { ssr: false });
 const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
+const Porter = dynamic(() => import("@/components/Porter"), { ssr: false });
 
 export default function MainPage() {
   const [menuState, setMenuState] = useState<string | null>(null);
@@ -38,6 +39,8 @@ export default function MainPage() {
         <section className={style["main-insider-root"]}>
           {/* biography */}
           <Biography />
+
+          <Porter />
         </section>
 
         <Interface active={menuState !== null}>

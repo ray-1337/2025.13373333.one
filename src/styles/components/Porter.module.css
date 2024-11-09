@@ -1,0 +1,27 @@
+.porter {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.porter canvas {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.porter[data-active] {
+  transition: opacity 75ms linear;
+  transition-delay: 0ms;
+}
+
+.porter[data-active="true"] {
+  transition: opacity 1.25s ease 500ms;
+  opacity: 1;
+}
