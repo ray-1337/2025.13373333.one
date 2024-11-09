@@ -4,6 +4,7 @@
   padding: 3.75rem 5rem 7.5rem;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 512px;
 }
 
 .biography-pfp img {
