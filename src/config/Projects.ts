@@ -39,7 +39,8 @@ const Websites: ProjectsVariableProp = [
     url: "https://github.com/ray-1337/2025.13373333.one",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/2025-13373333/banner-1.webp",
     yearRelease: 2024,
-    description: "My renewed website, created from scratch."
+    description: "My renewed website, created from scratch.",
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/2025-13373333/snapshots/001.webm"
   }
 ];
 
