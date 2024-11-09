@@ -14,6 +14,7 @@ const Porter = dynamic(() => import("@/components/Porter"), { ssr: false });
 
 export default function MainPage() {
   const [menuState, setMenuState] = useState<string | null>(null);
+  const [initiatePorter, setPorterState] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -24,6 +25,10 @@ export default function MainPage() {
 
     if (typeof window !== "undefined") {
       window.addEventListener("beforeunload", resetMenuState);
+
+      if (window.innerWidth >= 768) {
+        setPorterState(true);
+      };
     };
 
     return () => {
@@ -40,7 +45,9 @@ export default function MainPage() {
           {/* biography */}
           <Biography />
 
-          <Porter />
+          {
+            initiatePorter === true && <Porter />
+          }
         </section>
 
         <Interface active={menuState !== null}>

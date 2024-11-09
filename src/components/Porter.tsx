@@ -43,11 +43,6 @@ export default function Porter() {
       return;
     };
 
-    // no mobile
-    if (window.innerWidth < 768) {
-      return console.log("skipped render porter robinson nurture line");
-    };
-
     const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = cameraZoom;
 
