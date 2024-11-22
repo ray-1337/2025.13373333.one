@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import ms from "ms";
 
-const apiKey = process.env.GITHUB_API_KEY;
-
 const query = `
   query {
     user (login: "ray-1337") {
@@ -21,6 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).end();
   };
 
+  const apiKey = process.env.GITHUB_API_KEY;
   if (!apiKey || typeof apiKey !== "string") {
     return res.status(400).end();
   };
