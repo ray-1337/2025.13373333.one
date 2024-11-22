@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   if (request.status !== 200) {
-    return res.status(500).end();
+    return res.status(500).send(`Received status code [${request.status}] from GitHub.`);
   };
 
   const json = await request.json() as { data: { user: { status: PartialUserStatus | null } } };
