@@ -13,6 +13,8 @@ const query = `
     }
   }
 `;
+
+export const runtime = 'edge';
  
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
