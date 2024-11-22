@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest } from "next";
 import ms from "ms";
 
 const query = `
@@ -14,14 +14,14 @@ const query = `
 
 export const runtime = 'edge';
  
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest) {
   if (req.method !== "GET") {
-    return res.status(405).end();
+    return new Response(null, { status: 405 });
   };
 
   const apiKey = process.env.GITHUB_API_KEY;
   if (!apiKey || typeof apiKey !== "string") {
-    return res.status(400).end();
+    return new Response(null, { status: 400 });
   };
 
   const request = await fetch("https://api.github.com/graphql", {
@@ -35,12 +35,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   if (request.status !== 200) {
-    return res.status(500).send(`Received status code [${request.status}] from GitHub.`);
+    return new Response(`Received status code [${request.status}] from GitHub.`, { status: 500, headers: { "Content-Type": "text/plain" } });
   };
 
   const json = await request.json() as { data: { user: { status: PartialUserStatus | null } } };
 
-  return res
-    .setHeader("Cache-Control", `public, max-age=${Math.round(ms("1d") / 1000)}, immutable`)
-    .json({ state: json.data.user.status || null });
+  return new Response(JSON.stringify({ state: json.data.user.status || null }), {
+    status: 200,
+    headers: {
+      "Cache-Control": `public, max-age=${Math.round(ms("1d") / 1000)}, immutable`,
+      "Content-Type": "application/json"
+    }
+  });
 };
