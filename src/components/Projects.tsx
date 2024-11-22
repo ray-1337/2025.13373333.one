@@ -79,7 +79,7 @@ export default function Projects() {
   return (
     <section className={style["projects-root"]}>
       {/* filter and stuff */}
-      <Flex mb={windowWidth > 600 ? "3.75rem" : "2rem"} gap={"xl"} direction={windowWidth > 600 ? "row" : "column-reverse"} align={windowWidth > 600 ? "center" : "flex-start"}>
+      <Flex mb={windowWidth > 600 ? "2.5rem" : "2rem"} gap={"xl"} direction={windowWidth > 600 ? "row" : "column-reverse"} align={windowWidth > 600 ? "center" : "flex-start"}>
         {/* project's filter */}
         <Select onChange={(value) => handleFilterChange(value as typeof ProjectType[number])} comboboxProps={{transitionProps: {transition: "fade-down", duration: 125}}} size={"md"} maw={windowWidth > 600 ? "30%" : "100%"} data={ProjectType} allowDeselect clearable placeholder={"Filter"}/>
 
