@@ -41,7 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const json = await request.json() as { data: { user: { status: PartialUserStatus | null } } };
 
   return res
-    .status(200)
     .setHeader("Cache-Control", `public, max-age=${Math.round(ms("1d") / 1000)}, immutable`)
     .json({ state: json.data.user.status || null });
 };
