@@ -92,7 +92,7 @@ export default function Biography() {
             Hi, I am Ray. I am an indepedent full-stack developer.
 
             <br />
-            I do create a website, and in my free time, I tend to play some games and stuff.
+            I do create websites, and in my free time, I play some games.
           </p>
         </div>
 
