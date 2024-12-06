@@ -153,8 +153,7 @@ const HiddenProjects: Omit<ProjectsProp, "hidden">[] = [
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/dash.cdev.shop/banner-1.webp",
     yearRelease: 2023,
     description: "A Discord bot dashboard for cDev (Community Development), created with Next.js.",
-    projectState: "Discontinued",
-    ytVidId: "DQJ8P9kgkwk"
+    projectState: "Discontinued"
   }
 ];
 
