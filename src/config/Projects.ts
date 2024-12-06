@@ -24,16 +24,6 @@ const Websites: ProjectsVariableProp = [
     description: "A reliable source of articles on anthropomorphic culture in Indonesia, and outside in the future."
   },
   {
-    name: "cdev.shop (Discord Bot Dashboard)",
-    type: "Platform/Website",
-    url: "https://dash.cdev.shop/demo",
-    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/dash.cdev.shop/banner-1.webp",
-    yearRelease: 2023,
-    description: "A Discord bot dashboard for cDev (Community Development), created with Next.js.",
-    projectState: "Discontinued",
-    ytVidId: "DQJ8P9kgkwk"
-  },
-  {
     name: "This Website",
     type: "Platform/Website",
     url: "https://github.com/ray-1337/2025.13373333.one",
@@ -155,6 +145,16 @@ const HiddenProjects: Omit<ProjectsProp, "hidden">[] = [
         url: "https://www.instagram.com/wolfox_09"
       }
     ]
+  },
+  {
+    name: "cdev.shop (Discord Bot Dashboard)",
+    type: "Platform/Website",
+    url: "https://dash.cdev.shop/demo",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/dash.cdev.shop/banner-1.webp",
+    yearRelease: 2023,
+    description: "A Discord bot dashboard for cDev (Community Development), created with Next.js.",
+    projectState: "Discontinued",
+    ytVidId: "DQJ8P9kgkwk"
   }
 ];
 
