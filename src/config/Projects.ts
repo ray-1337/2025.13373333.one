@@ -37,6 +37,14 @@ const Websites: ProjectsVariableProp = [
 // applications
 const Applications: ProjectsVariableProp = [
   {
+    name: "Radial Profile Picture Cut",
+    type: "Application",
+    url: "https://radial-pfp-cut.pages.dev",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/radial-pfp-cut/radial-pfp-cut-thumb-01.webp",
+    yearRelease: 2024,
+    description: "Pan and crop the image and turn it into a perfect circular profile picture."
+  },
+  {
     name: "YouTube Discord Embed",
     type: "Application",
     url: "https://github.com/ray-1337/youtube-discord-embed",
