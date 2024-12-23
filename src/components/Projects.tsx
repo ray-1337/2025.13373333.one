@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, type SyntheticEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Select, Checkbox, Flex, Tooltip, Group, Text, Loader } from "@mantine/core";
@@ -69,6 +69,13 @@ export default function Projects() {
     return;
   };
 
+  const onVideoPlay = (event: SyntheticEvent<HTMLVideoElement, Event>, currentStatus: boolean) => {
+    if (!currentStatus) {
+      event.currentTarget.load();
+      setVideoSnapshotLoadState(true);
+    };
+  };
+
   useEffect(() => {
     if (
       typeof selectedProjectIndex === "number" && 
@@ -122,7 +129,7 @@ export default function Projects() {
                       {
                         ((typeof selectedProjectIndex === "number" ? selectedProjectIndex : delayedProjectSelectionIndex) === projectIndex && typeof projectContent?.vidURL === "string") && (
                           <div className={style["projects-item-media-box-video"]} data-loaded={isVideoSnapshotLoaded}>
-                            <video onCanPlay={() => setVideoSnapshotLoadState(true)} onPlay={() => setVideoSnapshotLoadState(true)} controls={false} controlsList={"nodownload nofullscreen noremoteplayback"} disablePictureInPicture disableRemotePlayback loop muted autoPlay playsInline preload={"auto"}>
+                            <video onPlay={(event) => onVideoPlay(event, isVideoSnapshotLoaded)} controls={false} controlsList={"nodownload nofullscreen noremoteplayback"} disablePictureInPicture disableRemotePlayback loop muted autoPlay playsInline preload={"auto"}>
                               {
                                 projectContent.vidURL.endsWith(".webm") && (
                                   <source src={projectContent.vidURL} type="video/webm" />
