@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment, type SyntheticEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Select, Checkbox, Flex, Tooltip, Group, Text, Loader } from "@mantine/core";
+import { Select, Checkbox, Flex, Group, Text, Loader, HoverCard } from "@mantine/core";
 import { useDebouncedValue, useViewportSize } from "@mantine/hooks";
 
 // utility import
@@ -95,17 +95,25 @@ export default function Projects() {
         <Select onChange={(value) => handleFilterChange(value as typeof ProjectType[number])} comboboxProps={{transitionProps: {transition: "fade-down", duration: 125}}} size={"md"} maw={windowWidth > 600 ? "30%" : "100%"} data={ProjectType} allowDeselect clearable placeholder={"Filter"}/>
 
         {/* show hidden content */}
-        <Tooltip position={"bottom"} openDelay={150} withArrow label={"Hidden content refers to outdated, underperforming, or least-favorite projects."}>
-          <Checkbox.Card bg={"dark.6"} radius="sm" checked={showHidden} onClick={() => setHiddenState((c) => !c)} px={"1rem"} py={"xs"} maw={"max-content"}>
-            <Group wrap="nowrap" align="center">
-              <Checkbox.Indicator bg={"dark.7"} />
+        <HoverCard width={280} shadow="md" position={"bottom"} openDelay={150} withArrow>
+          <HoverCard.Target>
+            <Checkbox.Card bg={"dark.6"} radius="sm" checked={showHidden} onClick={() => setHiddenState((c) => !c)} px={"1rem"} py={"xs"} maw={"max-content"}>
+              <Group wrap="nowrap" align="center">
+                <Checkbox.Indicator bg={"dark.7"} />
 
-              <Text size={"sm"} fw={500}>
-                Show hidden projects
-              </Text>
-            </Group>
-          </Checkbox.Card>
-        </Tooltip>
+                <Text size={"sm"} fw={500}>
+                  Show hidden projects
+                </Text>
+              </Group>
+            </Checkbox.Card>
+          </HoverCard.Target>
+
+          <HoverCard.Dropdown>
+            <Text size={"sm"}>
+              Hidden content refers to outdated, underperformed, or those intentionally hidden by my clients.
+            </Text>
+          </HoverCard.Dropdown>
+        </HoverCard>
       </Flex>
 
       {/* projects list */}
