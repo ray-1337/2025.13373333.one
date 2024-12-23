@@ -40,6 +40,10 @@ export default function Projects() {
       setFilterTransitionState(true);
     };
 
+    setMaxHeightSelectedProject(0);
+    selectProjectIndexState(null);
+    setVideoSnapshotLoadState(false);
+
     setTimeout(() => {
       setFilterState(value);
 
