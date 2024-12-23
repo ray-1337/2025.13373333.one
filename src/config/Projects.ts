@@ -157,7 +157,6 @@ const HiddenProjects: Omit<ProjectsProp, "hidden">[] = [
   {
     name: "cdev.shop (Discord Bot Dashboard)",
     type: "Platform/Website",
-    url: "https://dash.cdev.shop/demo",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/dash.cdev.shop/banner-1.webp",
     yearRelease: 2023,
     description: "A Discord bot dashboard for cDev (Community Development), created with Next.js.",
