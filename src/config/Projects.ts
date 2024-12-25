@@ -103,7 +103,7 @@ const Applications: ProjectsVariableProp = [
 // entertainment
 const Entertainment: ProjectsVariableProp = [
   {
-    name: "CupcakKe (Parody)",
+    name: "CupcakKe [NSFW] (Parody)",
     url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/cupcakke/banner-1.webp",
     type: "Entertainment",
