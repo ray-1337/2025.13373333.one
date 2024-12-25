@@ -154,7 +154,8 @@ const HiddenProjects: Omit<ProjectsProp, "hidden">[] = [
         name: "Memu",
         url: "https://www.instagram.com/wolfox_09"
       }
-    ]
+    ],
+    snapshots: new Array(5).fill(0).map((_, index) => `https://saint-chroma.cdn.13373333.one/0001/projects/nufc/snapshots/0${index + 1}.webp`)
   },
   {
     name: "cdev.shop (Discord Bot Dashboard)",
