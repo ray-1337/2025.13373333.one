@@ -146,7 +146,7 @@ export default function Projects() {
                       {
                         ((typeof selectedProjectIndex === "number" ? selectedProjectIndex : delayedProjectSelectionIndex) === projectIndex && typeof projectContent?.vidURL === "string") && (
                           <div className={style["projects-item-media-box-video"]} data-loaded={isVideoSnapshotLoaded}>
-                            <video onPlay={(event) => onVideoPlay(event, isVideoSnapshotLoaded)} controls={false} controlsList={"nodownload nofullscreen noremoteplayback"} disablePictureInPicture disableRemotePlayback loop muted autoPlay playsInline preload={"auto"}>
+                            <video onCanPlay={(event) => onVideoPlay(event, isVideoSnapshotLoaded)} controls={false} controlsList={"nodownload nofullscreen noremoteplayback"} disablePictureInPicture disableRemotePlayback loop muted autoPlay playsInline preload={"auto"}>
                               {
                                 projectContent.vidURL.endsWith(".webm") && (
                                   <source src={projectContent.vidURL} type="video/webm" />
