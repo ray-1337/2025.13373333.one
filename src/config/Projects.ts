@@ -22,7 +22,8 @@ const Websites: ProjectsVariableProp = [
     url: "https://anthro.id",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/banner-1.webp",
     yearRelease: 2024,
-    description: "A reliable source of articles on anthropomorphic culture in Indonesia, and outside in the future."
+    description: "A reliable source of articles on anthropomorphic culture in Indonesia, and outside in the future.",
+    snapshots: new Array(3).fill(0).map((_, index) => `https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/snapshots/0${index + 1}.webp`)
   },
   {
     name: "This Website",
