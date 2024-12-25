@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment, type SyntheticEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Select, Checkbox, Flex, Group, Text, Loader, HoverCard } from "@mantine/core";
+import { Select, Checkbox, Flex, Group, Text, Loader, HoverCard, Box, Grid } from "@mantine/core";
 import { useDebouncedValue, useViewportSize } from "@mantine/hooks";
 
 // utility import
@@ -77,11 +77,20 @@ export default function Projects() {
   };
 
   useEffect(() => {
-    if (
-      typeof selectedProjectIndex === "number" && 
-      (typeof (filteredProjects !== null ? filteredProjects : shuffledProjectsList)?.[selectedProjectIndex]?.ytVidId === "string")
-    ) {
-      setMaxHeightSelectedProject((prev) => prev + 650);
+    if (typeof selectedProjectIndex === "number") {
+      const currentProjects = filteredProjects !== null ? filteredProjects : shuffledProjectsList;
+      if (typeof currentProjects?.[selectedProjectIndex]?.ytVidId === "string") {
+        setMaxHeightSelectedProject((prev) => prev + 650);
+      };
+
+      if (Array.isArray(currentProjects?.[selectedProjectIndex]?.snapshots) && currentProjects[selectedProjectIndex].snapshots.length >= 1) {
+        // @ts-expect-error
+        setMaxHeightSelectedProject((prev) => prev + ((Math.ceil(currentProjects[selectedProjectIndex].snapshots.length / 2) * 400) + 25));
+
+        if (windowWidth <= 768) {
+          setMaxHeightSelectedProject((prev) => prev + 400);
+        };
+      };
     };
 
     setVideoSnapshotLoadState(false);
@@ -250,6 +259,28 @@ export default function Projects() {
                     <section className={style["projects-item-youtube-embed-root"]}>
                       <iframe src={`https://www.youtube-nocookie.com/embed/${projectContent.ytVidId.startsWith("PL") ? `videoseries?list=${projectContent.ytVidId}&rel=0` : projectContent.ytVidId + "?rel=0"}`} referrerPolicy="strict-origin-when-cross-origin" />
                     </section>
+                  )
+                }
+
+                {/* project's snapshots */}
+                {
+                  (
+                    (Array.isArray(projectContent?.snapshots) && projectContent.snapshots.length >= 1) &&
+                    ((typeof selectedProjectIndex === "number" ? selectedProjectIndex : delayedProjectSelectionIndex) === projectIndex)
+                  ) && (
+                    <Grid grow px={windowWidth <= 600 ? "md" : "xl"} mb={"xl"} mt={"1rem"}>
+                      {
+                        projectContent.snapshots.map((imageURL, index) => (
+                          <Grid.Col span={windowWidth <= 768 ? 12 : 6} className={style["project-snapshots-individual"]} key={`project-snapshot-${index}`}>
+                            <Link href={imageURL} target={"_blank"} referrerPolicy={"same-origin"}>
+                              <Box className={style["project-snapshots-individual-insider"]}>
+                                <img src={imageURL} alt={`One of the snapshot of a project named ${projectContent.name}`} loading={"lazy"} />
+                              </Box>
+                            </Link>
+                          </Grid.Col>
+                        ))
+                      }
+                    </Grid>
                   )
                 }
 

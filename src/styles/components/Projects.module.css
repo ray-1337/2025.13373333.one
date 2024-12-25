@@ -213,6 +213,24 @@
   margin: 0 0 3.75rem;
 }
 
+.project-snapshots-individual {
+  width: 33.333%;
+  height: 33.333%;
+}
+
+.project-snapshots-individual-insider {
+  object-fit: cover;
+  height: 384px;
+  width: 100%;
+  filter: grayscale(1);
+  transition: filter 125ms ease;
+  cursor: pointer;
+}
+
+.project-snapshots-individual:hover .project-snapshots-individual-insider {
+  filter: grayscale(0);
+}
+
 @media only screen and (max-width: 768px) {
   .projects-item-visit-root {
     position: relative;

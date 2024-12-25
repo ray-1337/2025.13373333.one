@@ -7,7 +7,8 @@ interface ProjectsProp extends Record<"name" | "imgURL", string>, Partial<Record
   yearRelease?: number;
   credits?: Array<Record<"name" | "url", string>>;
   projectState?: typeof ProjectStateType[number];
-  hidden?: boolean
+  hidden?: boolean;
+  snapshots?: string[];
   vidURL?: string; // will be used when user's click the project's item 
 };
 
