@@ -151,8 +151,12 @@ const HiddenProjects: Omit<ProjectsProp, "hidden">[] = [
         url: "https://instagram.com/nusa_furcon"
       },
       {
-        name: "Memu",
+        name: "Memu (Banner Artwork)",
         url: "https://www.instagram.com/wolfox_09"
+      },
+      {
+        name: "Itchi Huskii (Website Assets)",
+        url: "https://www.instagram.com/itchi.huskii"
       }
     ],
     snapshots: new Array(5).fill(0).map((_, index) => `https://saint-chroma.cdn.13373333.one/0001/projects/nufc/snapshots/0${index + 1}.webp`)
