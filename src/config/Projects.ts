@@ -119,7 +119,7 @@ const Entertainment: ProjectsVariableProp = [
   {
     name: "VALORANT Funny Moment Edits",
     url: "https://www.youtube.com/playlist?list=PLYrHu4ar33mX9Q32QHk90SoGmZTVovVSI",
-    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/valorant-funny-moment/banner-1.webp",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/valorant-funny-moment/banner-2.webp",
     type: "Entertainment",
     description: "A funny moments compilation of me (Ray) playing VALORANT with friends.",
     ytVidId: "PLYrHu4ar33mX9Q32QHk90SoGmZTVovVSI",
