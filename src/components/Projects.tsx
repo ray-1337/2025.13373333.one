@@ -1,8 +1,8 @@
-import { useState, useEffect, Fragment, type SyntheticEvent } from "react";
+import { useState, useEffect, useRef, Fragment, type SyntheticEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Select, Checkbox, Flex, Group, Text, Loader, HoverCard, Box, Grid } from "@mantine/core";
-import { useDebouncedValue, useViewportSize } from "@mantine/hooks";
+import { useDebouncedValue, useViewportSize, useListState } from "@mantine/hooks";
 
 // utility import
 import shuffleArray from "@/utility/shuffle-array";
@@ -20,6 +20,8 @@ import style from "@/styles/components/Projects.module.css";
 export default function Projects() {
   const { width: windowWidth } = useViewportSize();
 
+  const [projectsList, projectsListHandlers] = useListState(shuffledProjectsList);
+
   const [selectedProjectIndex, selectProjectIndexState] = useState<number | null>(null);
   const [isVideoSnapshotLoaded, setVideoSnapshotLoadState] = useState<boolean>(false);
   const [delayedProjectSelectionIndex] = useDebouncedValue(selectedProjectIndex, 750);
@@ -34,6 +36,7 @@ export default function Projects() {
   const [filteringTransitionState, setFilterTransitionState] = useState<boolean>(false);
   const [filteredProjects, setFilteredProjects] = useState<ProjectsFilterListType | null>(null);
   const [showHidden, setHiddenState] = useState<boolean>(false);
+  const safeStateRef = useRef<boolean>(false);
 
   const handleFilterChange = (value: ProjectsFilterTypes) => {
     if (filteringTransitionState === false) {
@@ -51,7 +54,7 @@ export default function Projects() {
         return setFilteredProjects(null);
       };
 
-      const filteredData = [...shuffledProjectsList].sort((a, b) => {
+      const filteredData = [...projectsList].sort((a, b) => {
         if (a.type === value && b.type !== value) return -1;
         if (a.type !== value && b.type === value) return 1;
         
@@ -78,7 +81,7 @@ export default function Projects() {
 
   useEffect(() => {
     if (typeof selectedProjectIndex === "number") {
-      const currentProjects = filteredProjects !== null ? filteredProjects : shuffledProjectsList;
+      const currentProjects = filteredProjects !== null ? filteredProjects : projectsList;
       if (typeof currentProjects?.[selectedProjectIndex]?.ytVidId === "string") {
         setMaxHeightSelectedProject((prev) => prev + 650);
       };
@@ -95,6 +98,18 @@ export default function Projects() {
 
     setVideoSnapshotLoadState(false);
   }, [selectedProjectIndex]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const safeState = new URL(window.location.toString()).searchParams.get("safe");
+
+      if (safeState === "1" && safeStateRef.current !== true) {
+        projectsListHandlers.filter(project => !project?.nsfw);
+
+        safeStateRef.current = true;
+      };
+    };
+  }, []);
 
   return (
     <section className={style["projects-root"]}>
@@ -128,7 +143,7 @@ export default function Projects() {
       {/* projects list */}
       <section className={style["projects-list-root"]} data-animation-01={filteringTransitionState}>
         {
-          (filteredProjects !== null ? filteredProjects : shuffledProjectsList).map((projectContent, projectIndex) => (
+          (filteredProjects !== null ? filteredProjects : projectsList).map((projectContent, projectIndex) => (
             <div data-hidden={projectContent?.hidden === true && showHidden === false} style={{transitionDelay: (filteredProjects !== null && ((projectContent?.hidden === true && showHidden === false) ? projectIndex - 1 : projectIndex) <= 3) ? `${(75 * projectIndex)}ms` : undefined}} data-stop-interactive={filterState !== null ? projectContent.type !== filterState : undefined} data-indexes={projectIndex} className={style["projects-item-root"]} key={`${projectIndex}-${projectContent.name}`} data-selected={selectedProjectIndex === projectIndex}>
               {/* project image */}
               <div className={style["projects-item-projectile"]}>
