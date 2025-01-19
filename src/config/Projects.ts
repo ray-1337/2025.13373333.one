@@ -97,7 +97,8 @@ const Applications: ProjectsVariableProp = [
     yearRelease: 2024,
     projectState: "Hiatus",
     ytVidId: "ivvtDl8u-Ro",
-    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/vlr-waiting-room/snapshots/001.webm"
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/vlr-waiting-room/snapshots/001.webm",
+    hidden: true
   }
 ];
 
