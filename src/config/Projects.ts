@@ -60,7 +60,7 @@ const Applications: ProjectsVariableProp = [
     name: "Anti-NSFW",
     type: "Application",
     url: "https://discord.com/application-directory/663326517731917844",
-    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anti-nsfw/banner-1.webp",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anti-nsfw/banner-2.webp",
     yearRelease: 2020,
     description: "A Discord bot that can detect NSFW content through machine learning.",
     ytVidId: "nmPzkVfQLAM",
