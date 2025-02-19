@@ -62,7 +62,7 @@ const Applications: ProjectsVariableProp = [
     url: "https://discord.com/application-directory/663326517731917844",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anti-nsfw/banner-2.webp",
     yearRelease: 2020,
-    description: "A Discord bot that can detect NSFW content through machine learning.",
+    description: "A powerful, feature-rich, and customizable Discord bot that can analyze explicit content in your server.",
     ytVidId: "nmPzkVfQLAM",
     credits: [
       {
