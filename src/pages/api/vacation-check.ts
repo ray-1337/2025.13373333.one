@@ -40,10 +40,12 @@ export default async function handler(req: NextApiRequest) {
 
   const json = await request.json() as { data: { user: { status: PartialUserStatus | null } } };
 
+  const cacheTime = Math.round(ms("1d") / 1000);
+
   return new Response(JSON.stringify({ state: json.data.user.status || null }), {
     status: 200,
     headers: {
-      "Cache-Control": `public, max-age=${Math.round(ms("1d") / 1000)}, immutable`,
+      "Cache-Control": `public, max-age=${cacheTime}, s-maxage=${cacheTime}, immutable`,
       "Content-Type": "application/json"
     }
   });
