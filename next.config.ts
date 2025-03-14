@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
 
   poweredByHeader: false,
 
+  experimental: {
+    optimizePackageImports: ["three", "@mantine/core"]
+  },
+
   async headers() {
     return [
       {
