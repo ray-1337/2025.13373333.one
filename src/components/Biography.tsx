@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { Anchor, HoverCard, Text, Flex, Badge } from "@mantine/core";
+import { Flex, Badge, Image } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 
 const Menu = dynamic(() => import("./Menu"));
@@ -59,19 +57,7 @@ export default function Biography() {
       <section className={style["biography-upper"]}>
         {/* profile picture */}
         <div className={style["biography-pfp"]}>
-          <HoverCard withArrow>
-            <HoverCard.Target>
-              <Link href={"https://x.com/Gab_914"} target={"_blank"}>
-                <Image alt={"A profile picture of me."} src={"/media/ray/legoshi_001.webp"} width={96} height={96} quality={90}/>
-              </Link>
-            </HoverCard.Target>
-
-            <HoverCard.Dropdown>
-              <Text size={"sm"} fw={500}>
-                Avatar by <Anchor component={Link} href={"https://x.com/Gab_914"} target={"_blank"}>@Gab_914</Anchor>
-              </Text>
-            </HoverCard.Dropdown>
-          </HoverCard>
+          <Image alt={"A profile picture of me."} src={"https://saint-chroma.cdn.13373333.one/0001/personal/myself/0003.webp"} width={96} height={96}/>
         </div>
 
         {/* bio text */}
