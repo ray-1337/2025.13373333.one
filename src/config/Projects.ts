@@ -124,7 +124,8 @@ const Entertainment: ProjectsVariableProp = [
     description: "A compilation of funny moments featuring me (Ray) playing VALORANT with friends, edited using Adobe Premiere Pro.",
     ytVidId: "PLYrHu4ar33mX9Q32QHk90SoGmZTVovVSI",
     yearRelease: 2024,
-    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/valorant-funny-moment/snapshots/001.webm"
+    vidURL: "https://saint-chroma.cdn.13373333.one/0001/projects/valorant-funny-moment/snapshots/001.webm",
+    projectState: "Hiatus"
   },
   {
     name: "Blob Project",
