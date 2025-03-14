@@ -10,8 +10,8 @@
     "build-cf": "pnpm dlx @cloudflare/next-on-pages@latest"
   },
   "dependencies": {
-    "@mantine/core": "^7.16.1",
-    "@mantine/hooks": "^7.16.1",
+    "@mantine/core": "^7.17.2",
+    "@mantine/hooks": "^7.17.2",
     "ms": "^2.1.3",
     "next": "^15.1.5",
     "normalize.css": "^8.0.1",
