@@ -18,7 +18,7 @@
     "react": "latest",
     "react-dom": "latest",
     "simplex-noise": "^4.0.3",
-    "three": "^0.174.0"
+    "three": "^0.175.0"
   },
   "devDependencies": {
     "@types/ms": "^0.7.34",
