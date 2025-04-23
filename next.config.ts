@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
               upgrade-insecure-requests;
             `.replace(/\r|\n/g, '')
           },
+          {
+            key: "Link",
+            value: ["api", "cdn"].map(subdomain => (
+              ["dns-prefetch", "preconnect"].map(type => `<https://${subdomain}.fontshare.com>; rel="${type}"; crossOrigin="anonymous"`)
+            )).flat().join(", ")
+          }
         ],
       },
     ]
