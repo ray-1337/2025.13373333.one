@@ -28,6 +28,7 @@ const nextConfig: NextConfig = {
               frame-src https://www.youtube-nocookie.com;
               connect-src 'self' https://cloudflareinsights.com/;
               upgrade-insecure-requests;
+              block-all-mixed-content;
             `.replace(/\r|\n/g, '')
           },
           {
