@@ -1,6 +1,9 @@
-import { useState, useEffect, useRef, Fragment, type SyntheticEvent } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
+
+import { useState, useEffect, Fragment, type SyntheticEvent } from "react";
+
 import { Select, Checkbox, Flex, Group, Text, Loader, HoverCard, Box, Grid } from "@mantine/core";
 import { useDebouncedValue, useViewportSize, useListState } from "@mantine/hooks";
 
@@ -20,6 +23,11 @@ import style from "@/styles/components/Projects.module.css";
 export default function Projects() {
   const { width: windowWidth } = useViewportSize();
 
+  const params = useSearchParams();
+
+  // safe filtering
+  const isSafe = params.has("safe") && params.get("safe") === "1";
+
   const [projectsList, projectsListHandlers] = useListState(shuffledProjectsList);
 
   const [selectedProjectIndex, selectProjectIndexState] = useState<number | null>(null);
@@ -36,7 +44,6 @@ export default function Projects() {
   const [filteringTransitionState, setFilterTransitionState] = useState<boolean>(false);
   const [filteredProjects, setFilteredProjects] = useState<ProjectsFilterListType | null>(null);
   const [showHidden, setHiddenState] = useState<boolean>(false);
-  const safeStateRef = useRef<boolean>(false);
 
   const handleFilterChange = (value: ProjectsFilterTypes) => {
     if (filteringTransitionState === false) {
@@ -100,14 +107,8 @@ export default function Projects() {
   }, [selectedProjectIndex]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const safeState = new URL(window.location.toString()).searchParams.get("safe");
-
-      if (safeState === "1" && safeStateRef.current !== true) {
-        projectsListHandlers.filter(project => !project?.nsfw);
-
-        safeStateRef.current = true;
-      };
+    if (isSafe === true) {
+      projectsListHandlers.filter(project => !project?.nsfw);
     };
   }, []);
 
