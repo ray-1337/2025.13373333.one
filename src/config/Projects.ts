@@ -79,6 +79,7 @@ const Applications: ProjectsVariableProp = [
     yearRelease: 2020,
     description: "A powerful, feature-rich, and customizable Discord bot that can analyze explicit content in your server.",
     ytVidId: "nmPzkVfQLAM",
+    projectState: "Discontinued",
     credits: [
       {
         name: "Jpuf",
@@ -101,7 +102,8 @@ const Applications: ProjectsVariableProp = [
     type: "Application",
     yearRelease: 2023,
     url: "https://github.com/ray-1337/discord-music-bot/",
-    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/discord-bot-music/banner-1.webp"
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/discord-bot-music/banner-1.webp",
+    projectState: "Hiatus"
   },
   {
     name: "VALORANT Waiting Room Stream",
