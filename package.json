@@ -10,25 +10,25 @@
     "build-cf": "pnpm dlx @cloudflare/next-on-pages@latest"
   },
   "dependencies": {
-    "@mantine/core": "^7.17.4",
-    "@mantine/hooks": "^7.17.4",
+    "@mantine/core": "^8.3.18",
+    "@mantine/hooks": "^8.3.18",
     "ms": "^2.1.3",
-    "next": "^15.3.1",
+    "next": "^15.5.13",
     "normalize.css": "^8.0.1",
     "react": "latest",
     "react-dom": "latest",
     "simplex-noise": "^4.0.3",
-    "three": "^0.175.0"
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@types/ms": "^2.1.0",
-    "@types/node": "^22.14.1",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@types/three": "^0.175.0",
-    "eslint": "^9.25.1",
-    "eslint-config-next": "^15.3.1",
-    "typescript": "^5.8.3"
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.183.1",
+    "eslint": "^10.0.3",
+    "eslint-config-next": "^15.5.13",
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }
