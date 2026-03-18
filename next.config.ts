@@ -33,9 +33,9 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Link",
-            value: ["api", "cdn"].map(subdomain => (
+            value: ["api", "cdn"].flatMap(subdomain => (
               ["dns-prefetch", "preconnect"].map(type => `<https://${subdomain}.fontshare.com>; rel="${type}"; crossOrigin="anonymous"`)
-            )).flat().join(", ")
+            )).join(", ")
           }
         ],
       },

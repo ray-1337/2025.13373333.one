@@ -39,7 +39,7 @@ export default function Porter() {
   const animationId = useRef<number | null>(null);
 
   useEffect(() => {
-    if (typeof window == "undefined" || canvasRef.current === null || containerRef.current === null) {
+    if (typeof window === "undefined" || canvasRef.current === null || containerRef.current === null) {
       return;
     };
 
@@ -129,7 +129,7 @@ export default function Porter() {
   }, []);
 
   return (
-    <section className={style["porter"]} ref={containerRef} data-active={menuState !== null ? false : activeState}>
+    <section className={style.porter} ref={containerRef} data-active={menuState !== null ? false : activeState}>
       <canvas ref={canvasRef} />
     </section>
   )
