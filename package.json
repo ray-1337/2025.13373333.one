@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "pnpx @biomejs/biome lint .",
     "build-cf": "pnpm dlx @cloudflare/next-on-pages@latest"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "three": "^0.183.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.7",
     "@types/ms": "^2.1.0",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
