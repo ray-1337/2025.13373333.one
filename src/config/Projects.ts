@@ -27,6 +27,20 @@ const Websites: ProjectsVariableProp = [
     snapshots: [4, 5, 6, 7].map(index => `https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/snapshots/0${index}.webp`)
   },
   {
+    name: "Party Along With Anthro Indonesia",
+    type: "Platform/Website",
+    url: "https://pawai.id",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/pawai/snapshots/01.webp",
+    yearRelease: 2026,
+    description: "A huge furry convention nestled in Bali, Indonesia.",
+    snapshots: [2, 3].map(index => `https://saint-chroma.cdn.13373333.one/0001/projects/pawai/snapshots/0${index}.webp`),
+    ytVidId: "4hFotqvvurI",
+    credits: [{
+      name: "Andri Martin (Chirros)",
+      url: "https://instagram.com/andri.badak"
+    }]
+  },
+  {
     name: "This Website",
     type: "Platform/Website",
     url: "https://github.com/ray-1337/2025.13373333.one",
