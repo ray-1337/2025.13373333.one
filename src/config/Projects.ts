@@ -18,7 +18,7 @@ type ProjectsVariableProp = Array<ProjectsProp>;
 // websites
 const Websites: ProjectsVariableProp = [
   {
-    name: "Anthro.id",
+    name: "Anthro Indonesia",
     type: "Platform/Website",
     url: "https://anthro.id",
     imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/banner-1.webp",
