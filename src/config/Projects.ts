@@ -21,10 +21,10 @@ const Websites: ProjectsVariableProp = [
     name: "Anthro Indonesia",
     type: "Platform/Website",
     url: "https://anthro.id",
-    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/banner-1.webp",
+    imgURL: "https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/snapshots/04.webp",
     yearRelease: 2024,
     description: "A reliable source of articles on anthropomorphic culture in Indonesia, and outside in the future.",
-    snapshots: new Array(3).fill(0).map((_, index) => `https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/snapshots/0${index + 1}.webp`)
+    snapshots: [4, 5, 6, 7].map(index => `https://saint-chroma.cdn.13373333.one/0001/projects/anthro.id/snapshots/0${index}.webp`)
   },
   {
     name: "This Website",
