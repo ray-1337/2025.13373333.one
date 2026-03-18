@@ -5,7 +5,7 @@ import Socials from "@/config/Socials";
 
 import style from "@/styles/components/Biography.module.css";
 
-const obfuscatedEmail = btoa("personal@13373333.one");
+const obfuscatedEmail = btoa("ray@anthro.id");
 
 export default function SocialsComponent() {
   const [hovered, setHoverState] = useState<boolean>(false);
